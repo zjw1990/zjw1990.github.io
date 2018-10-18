@@ -301,12 +301,13 @@
         
           
             <h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-math --save</span><br></pre></td></tr></table></figure>
-<h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><p>add config.yml in source document and Theme document</p>
-<p>math:<br>  engine: ‘mathjax’ # or ‘katex’<br>  mathjax:<br>    src: custom_mathjax_source<br>    config:</p>
-<pre><code># MathJax config
-</code></pre><p>  katex:<br>    css: custom_css_source<br>    js: custom_js_source # not used<br>    config:</p>
+<h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><p>add <code>config.yml</code> in source document and Theme document<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line"><span class="attr">  engine:</span> <span class="string">'mathjax'</span> <span class="comment"># or 'katex'</span></span><br><span class="line"><span class="attr">  mathjax:</span></span><br><span class="line"><span class="attr">    src:</span> <span class="string">custom_mathjax_source</span></span><br><span class="line"><span class="attr">    config:</span></span><br><span class="line">      <span class="comment"># MathJax config</span></span><br><span class="line"><span class="attr">  katex:</span></span><br><span class="line"><span class="attr">    css:</span> <span class="string">custom_css_source</span></span><br><span class="line"><span class="attr">    js:</span> <span class="string">custom_js_source</span> <span class="comment"># not used</span></span><br><span class="line"><span class="attr">    config:</span></span><br></pre></td></tr></table></figure></p>
 <p>result:</p>
-<p>Simple inline $a = b + c$</p>
+<p>Simple inline</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$a = b + c$</span><br></pre></td></tr></table></figure>
+<p>$a = b + c$</p>
+<p>block</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;\partial u&#125;&#123;\partial t&#125;</span><br><span class="line">= h^2 \left( \frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +</span><br><span class="line">\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;\right)$$</span><br></pre></td></tr></table></figure>
 <p>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$</p>
 
           
