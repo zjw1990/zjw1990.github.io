@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion" lang="">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="行內公式 $\sin ^{ 2 }{ \theta +\cos ^{ 2 }{ \theta =1 }  }$ 行內公式 $$\frac { dy }{ dx } =\frac { { e }^{ x } }{ 3{ y }^{ 2 } }$$ $$\lim _{ x\rightarrow \infty  }{ \sum _{ k=1 }^{ x }{ \frac { \sin { k } +\c">
+<meta name="description" content="Install1$ npm install hexo-math --save Configadd config.yml in source document and Theme document math:  engine: ‘mathjax’ # or ‘katex’  mathjax:    src: custom_mathjax_source    config: # MathJax con">
 <meta property="og:type" content="article">
 <meta property="og:title" content="latex experiment">
 <meta property="og:url" content="http://yoursite.com/2018/10/18/latex-experiment/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="行內公式 $\sin ^{ 2 }{ \theta +\cos ^{ 2 }{ \theta =1 }  }$ 行內公式 $$\frac { dy }{ dx } =\frac { { e }^{ x } }{ 3{ y }^{ 2 } }$$ $$\lim _{ x\rightarrow \infty  }{ \sum _{ k=1 }^{ x }{ \frac { \sin { k } +\c">
+<meta property="og:description" content="Install1$ npm install hexo-math --save Configadd config.yml in source document and Theme document math:  engine: ‘mathjax’ # or ‘katex’  mathjax:    src: custom_mathjax_source    config: # MathJax con">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-18T00:49:30.851Z">
+<meta property="og:updated_time" content="2018-10-18T01:13:21.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="latex experiment">
-<meta name="twitter:description" content="行內公式 $\sin ^{ 2 }{ \theta +\cos ^{ 2 }{ \theta =1 }  }$ 行內公式 $$\frac { dy }{ dx } =\frac { { e }^{ x } }{ 3{ y }^{ 2 } }$$ $$\lim _{ x\rightarrow \infty  }{ \sum _{ k=1 }^{ x }{ \frac { \sin { k } +\c">
+<meta name="twitter:description" content="Install1$ npm install hexo-math --save Configadd config.yml in source document and Theme document math:  engine: ‘mathjax’ # or ‘katex’  mathjax:    src: custom_mathjax_source    config: # MathJax con">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>latex experiment | Hexo</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>latex experiment | Hexo</title>
   
 
 
@@ -144,7 +144,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -299,9 +299,14 @@
       
 
       
-        <p>行內公式 $\sin ^{ 2 }{ \theta +\cos ^{ 2 }{ \theta =1 }  }$ 行內公式</p>
-<p>$$\frac { dy }{ dx } =\frac { { e }^{ x } }{ 3{ y }^{ 2 } }$$</p>
-<p>$$\lim _{ x\rightarrow \infty  }{ \sum _{ k=1 }^{ x }{ \frac { \sin { k } +\cos { k }  }{ k }  }  } $$</p>
+        <h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-math --save</span><br></pre></td></tr></table></figure>
+<h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><p>add config.yml in source document and Theme document</p>
+<p>math:<br>  engine: ‘mathjax’ # or ‘katex’<br>  mathjax:<br>    src: custom_mathjax_source<br>    config:</p>
+<pre><code># MathJax config
+</code></pre><p>  katex:<br>    css: custom_css_source<br>    js: custom_js_source # not used<br>    config:</p>
+<p>result:</p>
+<p>Simple inline $a = b + c$</p>
+<p>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$</p>
 
       
     </div>
@@ -386,8 +391,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -429,6 +443,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install"><span class="nav-number">1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Config"><span class="nav-number">2.</span> <span class="nav-text">Config</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -570,7 +600,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -623,6 +653,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
