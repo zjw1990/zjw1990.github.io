@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmaxThree contributions:1. Proved Linear translaformation between two spaces should be orthogonalWhen mapping">
+<meta name="description" content="#array inferring example A = [[191  36  50   5  162   60]   [189  37  52   2  110   60]   [193  38  58  12  101  101]   [162  35  62  12  105   37]   [189  35  46  13  155   58]   [182  36  56   4  10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Review of SVD cross-lingual embedding">
-<meta property="og:url" content="http://yoursite.com/2018/10/18/review-of-SVD-cross-lingual-embedding/index.html">
+<meta property="og:title" content="Matlab operations">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/Matlab-operations/index.html">
 <meta property="og:site_name" content="Jiawei Zhao&#39;s blog">
-<meta property="og:description" content="Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmaxThree contributions:1. Proved Linear translaformation between two spaces should be orthogonalWhen mapping">
+<meta property="og:description" content="#array inferring example A = [[191  36  50   5  162   60]   [189  37  52   2  110   60]   [193  38  58  12  101  101]   [162  35  62  12  105   37]   [189  35  46  13  155   58]   [182  36  56   4  10">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-18T07:43:29.614Z">
+<meta property="og:updated_time" content="2018-10-24T00:23:54.084Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Review of SVD cross-lingual embedding">
-<meta name="twitter:description" content="Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmaxThree contributions:1. Proved Linear translaformation between two spaces should be orthogonalWhen mapping">
+<meta name="twitter:title" content="Matlab operations">
+<meta name="twitter:description" content="#array inferring example A = [[191  36  50   5  162   60]   [189  37  52   2  110   60]   [193  38  58  12  101  101]   [162  35  62  12  105   37]   [189  35  46  13  155   58]   [182  36  56   4  10">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/18/review-of-SVD-cross-lingual-embedding/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/24/Matlab-operations/"/>
 
 
 
 
 
-  <title>Review of SVD cross-lingual embedding | Jiawei Zhao's blog</title>
+  <title>Matlab operations | Jiawei Zhao's blog</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/18/review-of-SVD-cross-lingual-embedding/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/Matlab-operations/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Zhao">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Review of SVD cross-lingual embedding</h1>
+          <h1 class="post-title" itemprop="name headline">Matlab operations</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T19:45:23+13:00">
-                2018-10-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T13:10:34+13:00">
+                2018-10-24
               </time>
             
 
@@ -299,30 +299,20 @@
       
 
       
-        <h2 id="Article-Offline-bilingual-word-vectors-orthogonal-translaformations-and-the-inversed-softmax"><a href="#Article-Offline-bilingual-word-vectors-orthogonal-translaformations-and-the-inversed-softmax" class="headerlink" title="Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmax"></a>Article: <a href="https://arxiv.org/abs/1702.03859" target="_blank" rel="noopener">Offline bilingual word vectors, orthogonal translaformations and the inversed softmax</a></h2><h2 id="Three-contributions"><a href="#Three-contributions" class="headerlink" title="Three contributions:"></a>Three contributions:</h2><h3 id="1-Proved-Linear-translaformation-between-two-spaces-should-be-orthogonal"><a href="#1-Proved-Linear-translaformation-between-two-spaces-should-be-orthogonal" class="headerlink" title="1. Proved Linear translaformation between two spaces should be orthogonal"></a>1. Proved Linear translaformation between two spaces should be orthogonal</h3><p>When mapping a source word into target language, it should be able to be mapped back to the source language and obtain the original vector.</p>
-<p>$x \scriptsize{\sim} W^T$</p>
-<p>$y \scriptsize{\sim} Wx$</p>
-<p>$x \scriptsize{\sim} WW^Tx$</p>
-<h3 id="2-Translaformation-can-be-obtained-by-SVD"><a href="#2-Translaformation-can-be-obtained-by-SVD" class="headerlink" title="2. Translaformation can be obtained by SVD"></a>2. Translaformation can be obtained by SVD</h3><p>  a. form two ordered matrices $X_D$ and $Y_D$ from the dictionary<br>  b. Compute the SVD of</p>
-<p>$M’ = Y_D^TX_D=U{\Sigma}V^T$</p>
-<p>  c. The translaformation matrix</p>
-<p>  $O = UV^T$</p>
-<p>  d. The similarity matrix</p>
-<p>  $S = YUV^TX^T$</p>
-<p>Thus,</p>
-<p>$S_{ij}=y_i^TUV^Tx_j$</p>
-<p>$S_{ij}=(U^Ty_i)(V^Tx_j)$</p>
-<p>Then map both languages into a single space by applying translaformation $V^T$ to source language amd $U^T$ to target language.</p>
-<h3 id="3-SVD-CCA"><a href="#3-SVD-CCA" class="headerlink" title="3. SVD+CCA"></a>3. SVD+CCA</h3><p>a. Obtain the source dictionary matrix $X_D$ and do mean_centering and get new matrix $X_D’$. Same to $Y_D$ and get $Y_D’$</p>
-<p>b. Perform SVD to $X_D’$ and $Y_D’$</p>
-<p>$X_D’=Q_D{\Sigma}_XV_X^T$</p>
-<p>$Y_D’=W_D{\Sigma}_YV_Y^T$</p>
-<p>c. Perform another SVD</p>
-<p>$M’=Q_D^TW_D=U’{\Sigma}’V’^T$</p>
-<p>d. Obtain $X’$ and $Y’$ by substracting mean value of each column in $X_D$ and $Y_D$ (This step is confusing, not clear)</p>
-<p>e.Computging the full vol(still confusing)</p>
-<p>$Q_{aligned}=X’V_X{\Sigma}_X^{-1}U’$</p>
-<p>$W_{aligned}=Y’V_Y{\Sigma}_Y^{-1}V’$</p>
+        <p>#array inferring</p>
+<p>example</p>
+<p>A = [[191  36  50   5  162   60]<br>   [189  37  52   2  110   60]<br>   [193  38  58  12  101  101]<br>   [162  35  62  12  105   37]<br>   [189  35  46  13  155   58]<br>   [182  36  56   4  101   42]<br>   [211  38  56   8  101   38]<br>   [167  34  60   6  125   40]<br>   [176  31  74  15  200   40]<br>   [154  33  56  17  251  250]<br>   [169  34  50  17  120   38]<br>   [166  33  52  13  210  115]<br>   [154  34  64  14  215  105]<br>   [247  46  50   1   50   50]<br>   [193  36  46   6   70   31]<br>   [202  37  62  12  210  120]<br>   [176  37  54   4   60   25]<br>   [157  32  52  11  230   80]<br>   [156  33  54  15  225   73]<br>   [138  33  68   2  110   43]]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = A(:,1:3)</span><br><span class="line">Y = A(:,4:6)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">X =</span><br><span class="line"></span><br><span class="line">   191    36    50</span><br><span class="line">   189    37    52</span><br><span class="line">   193    38    58</span><br><span class="line">   162    35    62</span><br><span class="line">   189    35    46</span><br><span class="line">   182    36    56</span><br><span class="line">   211    38    56</span><br><span class="line">   167    34    60</span><br><span class="line">   176    31    74</span><br><span class="line">   154    33    56</span><br><span class="line">   169    34    50</span><br><span class="line">   166    33    52</span><br><span class="line">   154    34    64</span><br><span class="line">   247    46    50</span><br><span class="line">   193    36    46</span><br><span class="line">   202    37    62</span><br><span class="line">   176    37    54</span><br><span class="line">   157    32    52</span><br><span class="line">   156    33    54</span><br><span class="line">   138    33    68</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Y =</span><br><span class="line"></span><br><span class="line">     5   162    60</span><br><span class="line">     2   110    60</span><br><span class="line">    12   101   101</span><br><span class="line">    12   105    37</span><br><span class="line">    13   155    58</span><br><span class="line">     4   101    42</span><br><span class="line">     8   101    38</span><br><span class="line">     6   125    40</span><br><span class="line">    15   200    40</span><br><span class="line">    17   251   250</span><br><span class="line">    17   120    38</span><br><span class="line">    13   210   115</span><br><span class="line">    14   215   105</span><br><span class="line">     1    50    50</span><br><span class="line">     6    70    31</span><br><span class="line">    12   210   120</span><br><span class="line">     4    60    25</span><br><span class="line">    11   230    80</span><br><span class="line">    15   225    73</span><br><span class="line">     2   110    43</span><br></pre></td></tr></table></figure>
+<p>#array mean</p>
+<p>mean(X)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ans 178.6000   35.4000   56.1000</span><br></pre></td></tr></table></figure></p>
+<p>#repmat</p>
+<p>###B = repmat(A,n) returns an array containing n copies of A in the row and column dimensions.</p>
+<p>example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">A = diag([100 200 300])</span><br><span class="line">A = 3×3</span><br><span class="line"></span><br><span class="line">   100     0     0</span><br><span class="line">     0   200     0</span><br><span class="line">     0     0   300</span><br><span class="line"></span><br><span class="line">B = repmat(A,2)</span><br><span class="line">B = 6×6</span><br><span class="line"></span><br><span class="line">   100     0     0   100     0     0</span><br><span class="line">     0   200     0     0   200     0</span><br><span class="line">     0     0   300     0     0   300</span><br><span class="line">   100     0     0   100     0     0</span><br><span class="line">     0   200     0     0   200     0</span><br><span class="line">     0     0   300     0     0   300</span><br></pre></td></tr></table></figure>
+<p>###B = repmat(A,n,r) returns an array containing n copies of A in the row and r copies in the column dimensions.</p>
+<p>example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A = repmat(10,3,2)</span><br><span class="line">A = 3×2</span><br><span class="line"></span><br><span class="line">    10    10</span><br><span class="line">    10    10</span><br><span class="line">    10    10</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -347,8 +337,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/18/How-to-post/" rel="next" title="How to post">
-                <i class="fa fa-chevron-left"></i> How to post
+              <a href="/2018/10/22/Using-python-list-to-generate-new-lists/" rel="next" title="Using python list to generate new lists ">
+                <i class="fa fa-chevron-left"></i> Using python list to generate new lists 
               </a>
             
           </div>
@@ -356,10 +346,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/22/list-operation/" rel="prev" title="list_operation">
-                list_operation <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -411,17 +397,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -463,22 +440,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Article-Offline-bilingual-word-vectors-orthogonal-translaformations-and-the-inversed-softmax"><span class="nav-number">1.</span> <span class="nav-text">Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Three-contributions"><span class="nav-number">2.</span> <span class="nav-text">Three contributions:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Proved-Linear-translaformation-between-two-spaces-should-be-orthogonal"><span class="nav-number">2.1.</span> <span class="nav-text">1. Proved Linear translaformation between two spaces should be orthogonal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Translaformation-can-be-obtained-by-SVD"><span class="nav-number">2.2.</span> <span class="nav-text">2. Translaformation can be obtained by SVD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SVD-CCA"><span class="nav-number">2.3.</span> <span class="nav-text">3. SVD+CCA</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
