@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmaxThree contributions:1. Proved Linear translaformation between two spaces should be orthogonalWhen mapping">
+<meta name="description" content="QR FactorizationAn orthogonal matrix, or a matrix with orthonormal columns, is a real matrix whose columns all have unit length and are perpendicular to each other. If Q is orthogonal, then The simple">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Review of SVD cross-lingual embedding">
-<meta property="og:url" content="http://yoursite.com/2018/10/18/review-of-SVD-cross-lingual-embedding/index.html">
+<meta property="og:title" content="Matlab QR">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/matlab-QR/index.html">
 <meta property="og:site_name" content="Jiawei Zhao&#39;s blog">
-<meta property="og:description" content="Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmaxThree contributions:1. Proved Linear translaformation between two spaces should be orthogonalWhen mapping">
+<meta property="og:description" content="QR FactorizationAn orthogonal matrix, or a matrix with orthonormal columns, is a real matrix whose columns all have unit length and are perpendicular to each other. If Q is orthogonal, then The simple">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-18T07:43:29.614Z">
+<meta property="og:updated_time" content="2018-10-24T02:37:18.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Review of SVD cross-lingual embedding">
-<meta name="twitter:description" content="Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmaxThree contributions:1. Proved Linear translaformation between two spaces should be orthogonalWhen mapping">
+<meta name="twitter:title" content="Matlab QR">
+<meta name="twitter:description" content="QR FactorizationAn orthogonal matrix, or a matrix with orthonormal columns, is a real matrix whose columns all have unit length and are perpendicular to each other. If Q is orthogonal, then The simple">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/18/review-of-SVD-cross-lingual-embedding/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/24/matlab-QR/"/>
 
 
 
 
 
-  <title>Review of SVD cross-lingual embedding | Jiawei Zhao's blog</title>
+  <title>Matlab QR | Jiawei Zhao's blog</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/18/review-of-SVD-cross-lingual-embedding/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/matlab-QR/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Zhao">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Review of SVD cross-lingual embedding</h1>
+          <h1 class="post-title" itemprop="name headline">Matlab QR</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T19:45:23+13:00">
-                2018-10-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T15:36:56+13:00">
+                2018-10-24
               </time>
             
 
@@ -299,30 +299,33 @@
       
 
       
-        <h2 id="Article-Offline-bilingual-word-vectors-orthogonal-translaformations-and-the-inversed-softmax"><a href="#Article-Offline-bilingual-word-vectors-orthogonal-translaformations-and-the-inversed-softmax" class="headerlink" title="Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmax"></a>Article: <a href="https://arxiv.org/abs/1702.03859" target="_blank" rel="noopener">Offline bilingual word vectors, orthogonal translaformations and the inversed softmax</a></h2><h2 id="Three-contributions"><a href="#Three-contributions" class="headerlink" title="Three contributions:"></a>Three contributions:</h2><h3 id="1-Proved-Linear-translaformation-between-two-spaces-should-be-orthogonal"><a href="#1-Proved-Linear-translaformation-between-two-spaces-should-be-orthogonal" class="headerlink" title="1. Proved Linear translaformation between two spaces should be orthogonal"></a>1. Proved Linear translaformation between two spaces should be orthogonal</h3><p>When mapping a source word into target language, it should be able to be mapped back to the source language and obtain the original vector.</p>
-<p>$x \scriptsize{\sim} W^T$</p>
-<p>$y \scriptsize{\sim} Wx$</p>
-<p>$x \scriptsize{\sim} WW^Tx$</p>
-<h3 id="2-Translaformation-can-be-obtained-by-SVD"><a href="#2-Translaformation-can-be-obtained-by-SVD" class="headerlink" title="2. Translaformation can be obtained by SVD"></a>2. Translaformation can be obtained by SVD</h3><p>  a. form two ordered matrices $X_D$ and $Y_D$ from the dictionary<br>  b. Compute the SVD of</p>
-<p>$M’ = Y_D^TX_D=U{\Sigma}V^T$</p>
-<p>  c. The translaformation matrix</p>
-<p>  $O = UV^T$</p>
-<p>  d. The similarity matrix</p>
-<p>  $S = YUV^TX^T$</p>
-<p>Thus,</p>
-<p>$S_{ij}=y_i^TUV^Tx_j$</p>
-<p>$S_{ij}=(U^Ty_i)(V^Tx_j)$</p>
-<p>Then map both languages into a single space by applying translaformation $V^T$ to source language amd $U^T$ to target language.</p>
-<h3 id="3-SVD-CCA"><a href="#3-SVD-CCA" class="headerlink" title="3. SVD+CCA"></a>3. SVD+CCA</h3><p>a. Obtain the source dictionary matrix $X_D$ and do mean_centering and get new matrix $X_D’$. Same to $Y_D$ and get $Y_D’$</p>
-<p>b. Perform SVD to $X_D’$ and $Y_D’$</p>
-<p>$X_D’=Q_D{\Sigma}_XV_X^T$</p>
-<p>$Y_D’=W_D{\Sigma}_YV_Y^T$</p>
-<p>c. Perform another SVD</p>
-<p>$M’=Q_D^TW_D=U’{\Sigma}’V’^T$</p>
-<p>d. Obtain $X’$ and $Y’$ by substracting mean value of each column in $X_D$ and $Y_D$ (This step is confusing, not clear)</p>
-<p>e.Computging the full vol(still confusing)</p>
-<p>$Q_{aligned}=X’V_X{\Sigma}_X^{-1}U’$</p>
-<p>$W_{aligned}=Y’V_Y{\Sigma}_Y^{-1}V’$</p>
+        <p>QR Factorization<br>An orthogonal matrix, or a matrix with orthonormal columns, is a real matrix whose columns all have unit length and are perpendicular to each other. If Q is orthogonal, then</p>
+<p>The simplest orthogonal matrices are two-dimensional coordinate rotations.</p>
+<p>For complex matrices, the corresponding term is unitary. Orthogonal and unitary matrices are desirable for numerical computation because they preserve length, preserve angles, and do not magnify errors.</p>
+<p>The orthogonal, or QR, factorization expresses any rectangular matrix as the product of an orthogonal or unitary matrix and an upper triangular matrix. A column permutation may also be involved.</p>
+<p>or</p>
+<p>where Q is orthogonal or unitary, R is upper triangular, and P is a permutation.</p>
+<p>There are four variants of the QR factorization- full or economy size, and with or without column permutation.</p>
+<p>Overdetermined linear systems involve a rectangular matrix with more rows than columns, that is m-by-n with m &gt; n. The full size QR factorization produces a square, m-by-m orthogonal Q and a rectangular m-by-n upper triangular R.</p>
+<p>[Q,R] = qr(C)</p>
+<p>Q =<br>   -0.8182    0.3999   -0.4131<br>   -0.1818   -0.8616   -0.4739<br>   -0.5455   -0.3126    0.7777</p>
+<p>R =<br>  -11.0000   -8.5455<br>         0   -7.4817<br>         0         0<br>In many cases, the last m - n columns of Q are not needed because they are multiplied by the zeros in the bottom portion of R. So the economy size QR factorization produces a rectangular, m-by-n Q with orthonormal columns and a square n-by-n upper triangular R. For our 3-by-2 example, this is not much of a saving, but for larger, highly rectangular matrices, the savings in both time and memory can be quite important.</p>
+<p>[Q,R] = qr(C,0)</p>
+<p>Q =<br>   -0.8182    0.3999<br>   -0.1818   -0.8616<br>   -0.5455   -0.3126</p>
+<p>R =<br>  -11.0000   -8.5455<br>         0   -7.4817<br>In contrast to the LU factorization, the QR factorization does not require any pivoting or permutations. But an optional column permutation, triggered by the presence of a third output argument, is useful for detecting singularity or rank deficiency. At each step of the factorization, the column of the remaining unfactored matrix with largest norm is used as the basis for that step. This ensures that the diagonal elements of R occur in decreasing order and that any linear dependence among the columns is almost certainly be revealed by examining these elements. For our small example, the second column of C has a larger norm than the first, so the two columns are exchanged.</p>
+<p>[Q,R,P] = qr(C)</p>
+<p>Q =<br>   -0.3522    0.8398   -0.4131<br>   -0.7044   -0.5285   -0.4739<br>   -0.6163    0.1241    0.7777</p>
+<p>R =<br>  -11.3578   -8.2762<br>         0    7.2460<br>         0         0</p>
+<p>P =<br>     0     1<br>     1     0<br>When the economy size and column permutations are combined, the third output argument is a permutation vector, rather than a permutation matrix.</p>
+<p>[Q,R,p] = qr(C,0)</p>
+<p>Q =<br>   -0.3522    0.8398<br>   -0.7044   -0.5285<br>   -0.6163    0.1241</p>
+<p>R =<br>  -11.3578   -8.2762<br>         0    7.2460</p>
+<p>p =<br>     2     1<br>The QR factorization transforms an overdetermined linear system into an equivalent triangular system. The expression</p>
+<p>norm(A*x - b)<br>is equal to</p>
+<p>norm(Q<em>R</em>x - b)<br>Multiplication by orthogonal matrices preserves the Euclidean norm, so this expression is also equal to</p>
+<p>norm(R<em>x - y)<br>where y = Q’</em>b. Since the last m-n rows of R are zero, this expression breaks into two pieces</p>
+<p>norm(R(1:n,1:n)*x - y(1:n))<br>and</p>
+<p>norm(y(n+1:m))<br>When A has full rank, it is possible to solve for x so that the first of these expressions is zero. Then the second expression gives the norm of the residual. When A does not have full rank, the triangular structure of R makes it possible to find a basic solution to the least squares problem.</p>
 
       
     </div>
@@ -347,8 +350,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/18/How-to-post/" rel="next" title="How to post">
-                <i class="fa fa-chevron-left"></i> How to post
+              <a href="/2018/10/24/Matlab-operations/" rel="next" title="Matlab operations">
+                <i class="fa fa-chevron-left"></i> Matlab operations
               </a>
             
           </div>
@@ -356,10 +359,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/22/list-operation/" rel="prev" title="list_operation">
-                list_operation <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -411,17 +410,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -463,22 +453,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Article-Offline-bilingual-word-vectors-orthogonal-translaformations-and-the-inversed-softmax"><span class="nav-number">1.</span> <span class="nav-text">Article: Offline bilingual word vectors, orthogonal translaformations and the inversed softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Three-contributions"><span class="nav-number">2.</span> <span class="nav-text">Three contributions:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Proved-Linear-translaformation-between-two-spaces-should-be-orthogonal"><span class="nav-number">2.1.</span> <span class="nav-text">1. Proved Linear translaformation between two spaces should be orthogonal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Translaformation-can-be-obtained-by-SVD"><span class="nav-number">2.2.</span> <span class="nav-text">2. Translaformation can be obtained by SVD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SVD-CCA"><span class="nav-number">2.3.</span> <span class="nav-text">3. SVD+CCA</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
