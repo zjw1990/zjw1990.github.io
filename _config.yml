@@ -1,11 +1,9 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-title: Bay Jekyll Theme
+title: Jiawei Zhao
 description: >- # this means to ignore newlines until "baseurl:"
   Bay is a minimal Jekyll Theme.
-baseurl: "/bay" # the subpath of the site
-url: "https://eliottvincent.github.io" # the base hostname & protocol for the site
 og_image: /assets/img/profile-pic.jpg
 google_analytics: "UA-121636368-3"
 
@@ -20,25 +18,20 @@ footer:
   show_powered_by: true
   contact:
     - name: Email
-      value: yourmail@domain.com
-      link: mailto:yourmail@domain.com
+      value: j.zhao2@massey.ac.nz
+      link: mailto:j.zhao2@massey.ac.nz
     - name: WeChat
-      value: YourWeChatUsername
+      value: zhaojwvsmike
       link: "#"
   follow:
     - name: Twitter
-      link: http://twitter.com/YourTwitterUsername
-      username: "@YourTwitterUsername"
-    - name: Facebook
-      link: http://facebook.com/YourFacebookUsername
+      link: http://twitter.com/RealJiaweiZhao
+      username: "@RealJiaweiZhao"
     - name: LinkedIn
-      link: http://linkedin.com/in/YourLinkedInUsername
+      link: linkedin.com/in/zhao-jiawei-72526b144
     - name: GitHub
-      link: http://github.com/YourGitHubUsername
-    - name: Dribbble
-      link: https://dribbble.com/YourDribbbleUsername
-    - name: RSS
-      link: /feed.xml
+      link: http://github.com/zjw1990
+
 
 # Build settings
 markdown: kramdown

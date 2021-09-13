@@ -3,18 +3,19 @@ layout: work
 title: Work
 slug: /work
 items:
-  - title: My Interest 1
+  - title: Machine Translation
     image:
       src: /assets/img/work/water.png
       alt: water
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  - title: My Interest 2
+    description: My expertise includes unsupervised machine translation and low-resource machine translation. 
+
+  - title: Speech Translation
     image:
       src: /assets/img/work/sand.png
       alt: sand
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    description: I have been working on Speech Translation in recent years. I am interested in multi-language speech translation and knowledge transferring in Speech Translation
 ---
 
-This is an example of a "Work" page, displaying your work, your interests, your projects.
+My interest includes machine translation, speech translation and cross-lingual word embeddings.
 <br />
 <br />
