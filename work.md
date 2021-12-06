@@ -14,12 +14,6 @@ items:
       src: /assets/img/work/speech.png
       alt: sand
     description: I have been working on Speech Translation in recent years. I am interested in multi-language speech translation and knowledge transferring in Speech Translation
-
-  - title: Speech Translation
-    image:
-      src: /assets/img/work/OD.jpg
-      alt: sand
-    description: Currently, I am working on an objective detection project. Applying deep learning to detect fruits, which is essential for the automation of the food industry
 ---
 
 My interest includes machine translation, speech translation, cross-lingual word embeddings and objective detection.
