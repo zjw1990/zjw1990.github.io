@@ -13,9 +13,9 @@ items:
     image:
       src: /assets/img/work/speech.png
       alt: sand
-    description: I have been working on Speech Translation in recent years. I am interested in multi-language speech translation and knowledge transferring in Speech Translation
+    description: I have been working on Speech Translation in recent years. I am interested in multi-language speech translation and knowledge transferring in Speech Translation.
 ---
 
-My interest includes machine translation, speech translation, cross-lingual word embeddings and objective detection.
+My interest includes machine translation, speech translation, cross-lingual word embeddings.
 <br />
 <br />
