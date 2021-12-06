@@ -1,6 +1,6 @@
 ---
-layout: work
-title: Work
+layout: Expertise
+title: Expertise
 slug: /work
 items:
   - title: Machine Translation
