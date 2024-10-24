@@ -24,7 +24,7 @@ items:
   - title: Speech Translation
     image:
       src: /assets/img/work/speech.png
-      alt: sand
+      alt: water
     description: I have been working on Speech Translation in recent years. I am interested in multi-language speech translation and knowledge transferring in Speech Translation.
 ---
 
