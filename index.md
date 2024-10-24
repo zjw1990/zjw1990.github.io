@@ -13,7 +13,7 @@ I am currently a Machine Learning Engineer at Institute of Environmental Science
 My interests includes:
 
 1. Large Language Models – Fine-tuning, model compression, and knowledge distillation. (LLama, Qwen)
-2. Time Series Forecasting – Utilizing deep learning techniques such as transformers and LSTM networks for time series prediction.
+2. Time Series Forecasting – Utilizing deep learning techniques such as transformers and LSTM networks for time series prediction. I have done [some works](https://www.esr.cri.nz/news-publications/ai-driven-covid-19-hospitalisation-forecasting/) during COVID Pandamic. 
 3. Speech Processing – Focused on [speech translation](https://aclanthology.org/2021.emnlp-main.325/) and generation.
 4. [Causal Inference and Discovery](https://www.esr.cri.nz/news-publications/developing-a-digital-twin-platform/).
 5. Image Processing – Specializing in image segmentation and classification. I have supervised some [student projects](https://link.springer.com/chapter/10.1007/978-981-97-0376-0_30) for it.
