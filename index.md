@@ -6,7 +6,7 @@ profile_picture:
 ---
 
 <p>
-I am currently a Machine Learning Engineer at Institute of Environmental Science and Research New Zealand.
+I am currently a Machine Learning Engineer at [Institute of Environmental Science and Research New Zealand](https://www.esr.cri.nz/).
 </p>
 
 
