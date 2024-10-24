@@ -18,10 +18,10 @@ footer:
   show_powered_by: true
   contact:
     - name: Email
-      value: j.zhao2@massey.ac.nz
-      link: mailto:j.zhao2@massey.ac.nz
+      value: jiawei.zhao@esr.cri.nz
+      link: mailto:jiawei.zhao@esr.cri.nz
     - name: WeChat
-      value: zhaojwvsmike
+      value: u_r_muted
       link: "#"
   follow:
     - name: Twitter
