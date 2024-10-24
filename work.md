@@ -3,6 +3,11 @@ layout: work
 title: work
 slug: /work
 items:
+  - title: Time Series Forecasting
+    image:
+      src: /assets/img/work/time.png
+      alt: sand
+    description: Forecasting time sereis using deep learning.
   - title: Machine Translation
     image:
       src: /assets/img/work/mt.png
@@ -16,6 +21,6 @@ items:
     description: I have been working on Speech Translation in recent years. I am interested in multi-language speech translation and knowledge transferring in Speech Translation.
 ---
 
-My interest includes machine translation, speech translation, cross-lingual word embeddings. Currently, I am working on an objective detection project. Applying deep learning to detect fruits, which is essential for the automation of the food industry
+My research interest includes machine translation, speech translation, cross-lingual word embeddings. Currently, I have done some work on kiwifruit objective detection. Applying deep learning to detect fruits, which is essential for the automation of the food industry
 <br />
 <br />
