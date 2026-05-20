@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Large Population Model and its application in infectious disease modelling — simulating over 5 million individuals to predict outbreak scenarios">
+    <title>A Large Population Model and its Application in Infectious Disease Modelling — Jiawei Zhao</title>
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">JZ</a>
+            <ul class="nav-links">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="blog-post-page">
+        <div class="container">
+            <a href="/blog/" class="blog-post-back">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                All Posts
+            </a>
+
+            <article class="blog-post">
+                <header class="blog-post-header">
+                    <div class="blog-post-date">May 19, 2026</div>
+                    <h1>A Large Population Model and its Application in Infectious Disease Modelling</h1>
+                    <div class="blog-post-tags">
+                        <span class="blog-tag">Population Modelling</span>
+                        <span class="blog-tag">Infectious Disease</span>
+                        <span class="blog-tag">Machine Learning</span>
+                        <span class="blog-tag">Public Health</span>
+                    </div>
+                </header>
+
+                <div class="blog-post-body">
+                    <p>
+                        We recently showcased ESR's cutting-edge <strong>Large Population Model (LPM)</strong>,
+                        a simulation platform that models over <strong>5 million individuals</strong> to predict
+                        outbreak scenarios across Aotearoa New Zealand.
+                    </p>
+
+                    <img src="Teniwha.jpg" alt="A Large Population Model and its application in infectious disease modelling — ESR's LPM presentation" style="width:100%; border-radius: 8px; margin: 1.5rem 0;">
+
+                    <p>
+                        Infectious disease modelling has traditionally relied on compartmental models
+                        (SIR, SEIR, and their variants) that treat populations as homogeneous groups.
+                        While useful for understanding broad dynamics, these models struggle to capture
+                        the granular, individual-level heterogeneity that drives real-world outbreaks —
+                        differences in age, location, contact patterns, occupation, and health status.
+                    </p>
+
+                    <p>
+                        The Large Population Model takes a fundamentally different approach. By simulating
+                        every individual in the population as an autonomous agent with realistic
+                        demographic attributes, daily routines, and social contact networks, the LPM
+                        generates outbreak trajectories that reflect the true complexity of human behaviour.
+                    </p>
+
+                    <h2>How the LPM Works</h2>
+
+                    <p>
+                        At its core, the LPM integrates multiple data layers:
+                    </p>
+
+                    <ul>
+                        <li><strong>Synthetic population</strong> — a statistically representative digital replica of New Zealand's 5+ million residents, built from census data, household composition, workplace locations, and school enrolments</li>
+                        <li><strong>Mobility and activity patterns</strong> — daily movement between home, work, school, and community settings, calibrated against real-world transport and mobility data</li>
+                        <li><strong>Disease transmission model</strong> — an agent-based SEIR framework that simulates how infections propagate through contact networks in different settings</li>
+                        <li><strong>Intervention layer</strong> — configurable control measures such as border restrictions, isolation, vaccination rollouts, and physical distancing</li>
+                    </ul>
+
+                    <p>
+                        By integrating advanced machine learning with these comprehensive datasets, we've
+                        enhanced our ability to analyse disease impacts, control measures, and even climate
+                        scenarios — all within a single, coherent simulation framework.
+                    </p>
+
+                    <h2>From Prediction to Preparedness</h2>
+
+                    <p>
+                        The LPM isn't just a forecasting tool — it's a <em>decision-support platform</em>.
+                        Public health agencies can use it to ask counterfactual questions:
+                    </p>
+
+                    <ul>
+                        <li>What if we had closed borders one week earlier?</li>
+                        <li>How would a targeted vaccination campaign in Auckland affect nationwide hospitalisations?</li>
+                        <li>What's the optimal balance between school closures and economic activity?</li>
+                    </ul>
+
+                    <p>
+                        Each scenario runs across the full 5-million-person simulation, producing not
+                        just point estimates but full distributions of possible outcomes — capturing
+                        the inherent uncertainty in complex systems.
+                    </p>
+
+                    <h2>Looking Ahead</h2>
+
+                    <p>
+                        The LPM is an evolving platform. We're actively extending it to incorporate
+                        climate-driven disease risks, antimicrobial resistance modelling, and integration
+                        with the Digital Twin ALMA platform for real-time decision support.
+                    </p>
+
+                    <p>
+                        Infectious disease modelling is entering a new era — one where agent-based
+                        simulation, machine learning, and rich population data converge. The LPM
+                        represents a step toward that future, and we're excited about the impact it
+                        can have on protecting community health across Aotearoa and beyond.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Jiawei Zhao</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
