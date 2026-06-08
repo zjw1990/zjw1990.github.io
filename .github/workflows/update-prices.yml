@@ -1,0 +1,37 @@
+name: Update Stock Prices
+
+on:
+  schedule:
+    # Runs every 30 mins during US market hours (9:30 AM – 4:30 PM ET)
+    # UTC ≈ ET+4 (ET+5 in winter) – covers 13:30–21:00 UTC weekdays
+    - cron: '*/30 13-21 * * 1-5'
+  workflow_dispatch:  # manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r trade/requirements.txt
+
+      - name: Fetch stock prices
+        run: python trade/fetch_prices.py
+
+      - name: Commit updated prices
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add trade/prices.json
+          git diff --staged --quiet || git commit -m "Update stock prices [skip ci]"
+          git push

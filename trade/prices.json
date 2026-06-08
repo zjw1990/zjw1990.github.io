@@ -1,0 +1,21 @@
+{
+  "updated": "2026-06-08T11:42:40.836596Z",
+  "stocks": {
+    "NVDA": {
+      "price": 205.1,
+      "previousClose": 204.04
+    },
+    "MU": {
+      "price": 864.01,
+      "previousClose": 857.2
+    },
+    "VOO": {
+      "price": 678.0,
+      "previousClose": 675.84
+    },
+    "QQQ": {
+      "price": 705.06,
+      "previousClose": 700.3
+    }
+  }
+}
