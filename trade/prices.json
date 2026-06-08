@@ -3,19 +3,23 @@
   "stocks": {
     "NVDA": {
       "price": 205.1,
-      "previousClose": 204.04
+      "previousClose": 204.04,
+      "marketState": "CLOSED"
     },
     "MU": {
       "price": 864.01,
-      "previousClose": 857.2
+      "previousClose": 857.2,
+      "marketState": "CLOSED"
     },
     "VOO": {
       "price": 678.0,
-      "previousClose": 675.84
+      "previousClose": 675.84,
+      "marketState": "CLOSED"
     },
     "QQQ": {
       "price": 705.06,
-      "previousClose": 700.3
+      "previousClose": 700.3,
+      "marketState": "CLOSED"
     }
   }
 }

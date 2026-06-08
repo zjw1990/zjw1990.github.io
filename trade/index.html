@@ -90,14 +90,14 @@
 
         .ticker-table {
             width: 100%;
-            max-width: 420px;
+            max-width: 480px;
             margin: 0 auto 2rem;
             border-collapse: collapse;
         }
 
         .ticker-table th,
         .ticker-table td {
-            padding: 0.75rem 1rem;
+            padding: 0.75rem 0.6rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
         }
@@ -130,6 +130,7 @@
         .change.up { color: #34d399; }
         .change.down { color: #f87171; }
         .change.neutral { color: var(--text-muted); }
+        .change.ah { font-size: 0.8rem; }
 
         .ticker-table .spark {
             width: 60px;
@@ -164,6 +165,7 @@
                     <th>Symbol</th>
                     <th>Price</th>
                     <th>Change</th>
+                    <th>After-Hrs</th>
                 </tr>
             </thead>
             <tbody>
@@ -171,21 +173,25 @@
                     <td class="symbol">NVDA</td>
                     <td class="price" id="price-NVDA">—</td>
                     <td class="change" id="change-NVDA">—</td>
+                    <td class="change" id="ah-NVDA">—</td>
                 </tr>
                 <tr id="row-MU">
                     <td class="symbol">MU</td>
                     <td class="price" id="price-MU">—</td>
                     <td class="change" id="change-MU">—</td>
+                    <td class="change" id="ah-MU">—</td>
                 </tr>
                 <tr id="row-VOO">
                     <td class="symbol">VOO</td>
                     <td class="price" id="price-VOO">—</td>
                     <td class="change" id="change-VOO">—</td>
+                    <td class="change" id="ah-VOO">—</td>
                 </tr>
                 <tr id="row-QQQ">
                     <td class="symbol">QQQ</td>
                     <td class="price" id="price-QQQ">—</td>
                     <td class="change" id="change-QQQ">—</td>
+                    <td class="change" id="ah-QQQ">—</td>
                 </tr>
             </tbody>
         </table>
@@ -217,6 +223,20 @@
                 const cel = document.getElementById('change-' + sym);
                 cel.textContent = sign + change.toFixed(2) + ' (' + (pct > 0 ? '+' : '') + pct.toFixed(2) + '%)';
                 cel.className = 'change ' + dir;
+
+                // After-hours price
+                const ah = document.getElementById('ah-' + sym);
+                if (info.postMarketPrice) {
+                    const ahChange = info.postMarketChange || (info.postMarketPrice - price);
+                    const ahPct = info.postMarketChangePercent || ((ahChange / price) * 100);
+                    const ahDir = ahChange > 0 ? 'up' : ahChange < 0 ? 'down' : 'neutral';
+                    const ahSign = ahChange > 0 ? '+' : '';
+                    ah.textContent = '$' + info.postMarketPrice.toFixed(2) + ' ' + ahSign + ahChange.toFixed(2) + ' (' + (ahPct > 0 ? '+' : '') + ahPct.toFixed(2) + '%)';
+                    ah.className = 'change ah ' + ahDir;
+                } else {
+                    ah.textContent = '—';
+                    ah.className = 'change';
+                }
             }
 
             const updated = new Date(data.updated);

@@ -13,21 +13,36 @@ try:
     data = {}
     for sym in SYMBOLS:
         ticker = yf.Ticker(sym)
-        info = ticker.fast_info
+        fast = ticker.fast_info
+        # full info for post-market fields (not in fast_info)
+        info = ticker.info
 
-        price = info.get("lastPrice")
-        prev = info.get("previousClose") or info.get("regularMarketPreviousClose")
+        reg_price = fast.get("lastPrice") or fast.get("regularMarketPrice")
+        prev_close = fast.get("previousClose") or fast.get("regularMarketPreviousClose")
+        post_price = info.get("postMarketPrice")
+        post_change = info.get("postMarketChange")
+        post_pct = info.get("postMarketChangePercent")
 
-        if price is None:
-            # fallback to history for last price
+        if reg_price is None:
             hist = ticker.history(period="1d")
             if not hist.empty:
-                price = float(hist["Close"].iloc[-1])
+                reg_price = float(hist["Close"].iloc[-1])
+
+        market_state = info.get("marketState", "UNKNOWN")
 
         data[sym] = {
-            "price": round(float(price), 2) if price else None,
-            "previousClose": round(float(prev), 2) if prev else None,
+            "price": round(float(reg_price), 2) if reg_price else None,
+            "previousClose": round(float(prev_close), 2) if prev_close else None,
+            "marketState": market_state,
         }
+
+        # Include after-market price if available
+        if post_price is not None:
+            data[sym]["postMarketPrice"] = round(float(post_price), 2)
+            if post_change is not None:
+                data[sym]["postMarketChange"] = round(float(post_change), 2)
+            if post_pct is not None:
+                data[sym]["postMarketChangePercent"] = round(float(post_pct), 2)
 
     result = {
         "updated": datetime.now(timezone.utc).isoformat(),
@@ -43,7 +58,14 @@ try:
             change = d["price"] - d["previousClose"]
             pct = (change / d["previousClose"]) * 100
             sign = "+" if change > 0 else ""
-            print(f"   {sym}: ${d['price']:.2f} ({sign}{pct:.2f}%)")
+            extra = ""
+            if d.get("postMarketPrice"):
+                pm = d["postMarketPrice"]
+                pc = d.get("postMarketChange", pm - d["price"])
+                pp = d.get("postMarketChangePercent", (pc / d["price"]) * 100)
+                ps = "+" if pc > 0 else ""
+                extra = f" | AH: ${pm:.2f} ({ps}{pp:.2f}%)"
+            print(f"   {sym}: ${d['price']:.2f} ({sign}{pct:.2f}%) [{d.get('marketState','?')}]{extra}")
         else:
             print(f"   {sym}: ❌ data missing")
 
