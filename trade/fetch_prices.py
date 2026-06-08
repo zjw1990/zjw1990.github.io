@@ -1,74 +1,132 @@
-#!/usr/bin/env python3
-"""Fetch stock prices via yfinance and write to prices.json for the trade page."""
+#!/usr/bin/env -S .venv/bin/python
+"""Fetch stock prices via yfinance and write to prices.json.
+
+Usage:
+    python trade/fetch_prices.py
+
+Requires: yfinance (pip install yfinance)
+Output:   trade/prices.json
+"""
 import json
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
 import yfinance as yf
 
+# ── Config ──────────────────────────────────────────────────────────────
 SYMBOLS = ["NVDA", "MU", "VOO", "QQQ"]
-OUTPUT = "trade/prices.json"
+OUTPUT = Path(__file__).resolve().parent / "prices.json"
 
-try:
-    data = {}
-    for sym in SYMBOLS:
-        ticker = yf.Ticker(sym)
-        fast = ticker.fast_info
-        # full info for post-market fields (not in fast_info)
-        info = ticker.info
 
-        reg_price = fast.get("lastPrice") or fast.get("regularMarketPrice")
-        prev_close = fast.get("previousClose") or fast.get("regularMarketPreviousClose")
-        post_price = info.get("postMarketPrice")
-        post_change = info.get("postMarketChange")
-        post_pct = info.get("postMarketChangePercent")
+# ── Helpers ─────────────────────────────────────────────────────────────
+def fetch_stock(sym: str) -> dict | None:
+    """Fetch price data for a single symbol. Returns None on failure."""
+    try:
+        t = yf.Ticker(sym)
+        fast = t.fast_info
+        info = t.info
 
+        reg_price = (
+            fast.get("lastPrice")
+            or fast.get("regularMarketPrice")
+        )
+        prev_close = (
+            fast.get("previousClose")
+            or fast.get("regularMarketPreviousClose")
+        )
+
+        # Fallback to daily history if fast_info is empty
         if reg_price is None:
-            hist = ticker.history(period="1d")
+            hist = t.history(period="1d")
             if not hist.empty:
                 reg_price = float(hist["Close"].iloc[-1])
 
-        market_state = info.get("marketState", "UNKNOWN")
+        if reg_price is None:
+            print(f"   ⚠ {sym}: no price data", file=sys.stderr)
+            return None
 
-        data[sym] = {
-            "price": round(float(reg_price), 2) if reg_price else None,
+        result: dict = {
+            "price": round(float(reg_price), 2),
             "previousClose": round(float(prev_close), 2) if prev_close else None,
-            "marketState": market_state,
+            "marketState": info.get("marketState", "UNKNOWN"),
         }
 
-        # Include after-market price if available
-        if post_price is not None:
-            data[sym]["postMarketPrice"] = round(float(post_price), 2)
-            if post_change is not None:
-                data[sym]["postMarketChange"] = round(float(post_change), 2)
-            if post_pct is not None:
-                data[sym]["postMarketChangePercent"] = round(float(post_pct), 2)
+        # Post-market / after-hours
+        pm = info.get("postMarketPrice")
+        if pm is not None:
+            result["postMarketPrice"] = round(float(pm), 2)
+            pc = info.get("postMarketChange")
+            if pc is not None:
+                result["postMarketChange"] = round(float(pc), 2)
+            pp = info.get("postMarketChangePercent")
+            if pp is not None:
+                result["postMarketChangePercent"] = round(float(pp), 2)
+
+        return result
+
+    except Exception as exc:
+        print(f"   ❌ {sym}: {exc}", file=sys.stderr)
+        return None
+
+
+def format_stock(sym: str, d: dict) -> str:
+    """Pretty-print a single stock line."""
+    price = d["price"]
+    prev = d.get("previousClose")
+    state = d.get("marketState", "?")
+
+    if prev and prev != 0:
+        change = price - prev
+        pct = (change / prev) * 100
+        sign = "+" if change >= 0 else ""
+        line = f"{sym:>4s}: ${price:,.2f}  {sign}{change:+.2f} ({sign}{pct:.2f}%)  [{state}]"
+    else:
+        line = f"{sym:>4s}: ${price:,.2f}  [{state}]"
+
+    if d.get("postMarketPrice"):
+        pm = d["postMarketPrice"]
+        pc = d.get("postMarketChange", pm - price)
+        pp = d.get("postMarketChangePercent", (pc / price) * 100)
+        ps = "+" if pc >= 0 else ""
+        line += f"  AH: ${pm:,.2f} {ps}{pc:+.2f} ({ps}{pp:.2f}%)"
+
+    return line
+
+
+# ── Main ────────────────────────────────────────────────────────────────
+def main() -> int:
+    print(f"Fetching: {', '.join(SYMBOLS)}")
+    print("-" * 50)
+
+    stocks: dict = {}
+    errors = 0
+
+    for sym in SYMBOLS:
+        data = fetch_stock(sym)
+        if data is None:
+            errors += 1
+        else:
+            stocks[sym] = data
+            print(f"   {format_stock(sym, data)}")
+
+    if errors == len(SYMBOLS):
+        print(f"\n❌ All {len(SYMBOLS)} symbols failed — aborting.", file=sys.stderr)
+        return 1
 
     result = {
         "updated": datetime.now(timezone.utc).isoformat(),
-        "stocks": data,
+        "stocks": stocks,
     }
 
-    with open(OUTPUT, "w") as f:
-        json.dump(result, f, indent=2)
+    OUTPUT.write_text(json.dumps(result, indent=2) + "\n")
 
-    print(f"✅ Prices written to {OUTPUT}")
-    for sym, d in data.items():
-        if d["price"] and d["previousClose"]:
-            change = d["price"] - d["previousClose"]
-            pct = (change / d["previousClose"]) * 100
-            sign = "+" if change > 0 else ""
-            extra = ""
-            if d.get("postMarketPrice"):
-                pm = d["postMarketPrice"]
-                pc = d.get("postMarketChange", pm - d["price"])
-                pp = d.get("postMarketChangePercent", (pc / d["price"]) * 100)
-                ps = "+" if pc > 0 else ""
-                extra = f" | AH: ${pm:.2f} ({ps}{pp:.2f}%)"
-            print(f"   {sym}: ${d['price']:.2f} ({sign}{pct:.2f}%) [{d.get('marketState','?')}]{extra}")
-        else:
-            print(f"   {sym}: ❌ data missing")
+    print("-" * 50)
+    print(f"✅ Written to {OUTPUT}")
+    if errors:
+        print(f"⚠  {errors}/{len(SYMBOLS)} symbols failed — check above.")
+    return 0
 
-except Exception as e:
-    print(f"❌ Error: {e}", file=sys.stderr)
-    sys.exit(1)
+
+if __name__ == "__main__":
+    sys.exit(main())
