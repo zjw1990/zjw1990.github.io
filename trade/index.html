@@ -43,7 +43,7 @@
         .container {
             text-align: center;
             padding: 2rem;
-            max-width: 600px;
+            max-width: 640px;
         }
 
         .badge {
@@ -88,6 +88,59 @@
             opacity: 0.5;
         }
 
+        .ticker-table {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto 2rem;
+            border-collapse: collapse;
+        }
+
+        .ticker-table th,
+        .ticker-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ticker-table th {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .ticker-table .symbol {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .ticker-table .price {
+            font-weight: 600;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .ticker-table .change {
+            text-align: right;
+            font-size: 0.85rem;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .change.up { color: #34d399; }
+        .change.down { color: #f87171; }
+        .change.neutral { color: var(--text-muted); }
+
+        .ticker-table .spark {
+            width: 60px;
+            height: 28px;
+        }
+
+        .loading-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
         footer {
             margin-top: 3rem;
             font-size: 0.8rem;
@@ -101,13 +154,84 @@
         <span class="badge">Coming Soon</span>
         <h1>Trade</h1>
         <p>
-            A new project in the works. Exploring quantitative trading, market data 
-            analysis, and algorithmic strategies — built with clarity and rigour.
+            Exploring quantitative trading, market data analysis, and algorithmic
+            strategies — built with clarity and rigour.
         </p>
+
+        <table class="ticker-table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="row-NVDA">
+                    <td class="symbol">NVDA</td>
+                    <td class="price" id="price-NVDA">—</td>
+                    <td class="change" id="change-NVDA">—</td>
+                </tr>
+                <tr id="row-MU">
+                    <td class="symbol">MU</td>
+                    <td class="price" id="price-MU">—</td>
+                    <td class="change" id="change-MU">—</td>
+                </tr>
+                <tr id="row-VOO">
+                    <td class="symbol">VOO</td>
+                    <td class="price" id="price-VOO">—</td>
+                    <td class="change" id="change-VOO">—</td>
+                </tr>
+                <tr id="row-QQQ">
+                    <td class="symbol">QQQ</td>
+                    <td class="price" id="price-QQQ">—</td>
+                    <td class="change" id="change-QQQ">—</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="loading-text" id="updated">Loading prices…</p>
+
         <div class="divider"></div>
         <footer>
             &copy; 2026 Jiawei Zhao
         </footer>
     </div>
+
+    <script>
+    (async () => {
+        const symbols = ['NVDA', 'MU', 'VOO', 'QQQ'];
+        const currencies = { NVDA: true, MU: true, VOO: false, QQQ: false };
+
+        try {
+            const res = await fetch(
+                'https://query1.finance.yahoo.com/v7/finance/quote?symbols=' + symbols.join(',')
+            );
+            const data = await res.json();
+            const results = data.quoteResponse.result;
+
+            for (const r of results) {
+                const sym = r.symbol;
+                const price = r.regularMarketPrice;
+                const prev = r.regularMarketPreviousClose || r.previousClose;
+                const change = price - prev;
+                const pct = prev ? ((change / prev) * 100) : 0;
+                const dir = change > 0 ? 'up' : change < 0 ? 'down' : 'neutral';
+                const sign = change > 0 ? '+' : '';
+
+                document.getElementById('price-' + sym).textContent =
+                    '$' + price.toFixed(2);
+                const cel = document.getElementById('change-' + sym);
+                cel.textContent = sign + change.toFixed(2) + ' (' + (pct > 0 ? '+' : '') + pct.toFixed(2) + '%)';
+                cel.className = 'change ' + dir;
+            }
+
+            const now = new Date();
+            document.getElementById('updated').textContent =
+                'Updated ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) + ' ET';
+        } catch (e) {
+            document.getElementById('updated').textContent = 'Could not load prices.';
+        }
+    })();
+    </script>
 </body>
 </html>
