@@ -82,6 +82,21 @@ def fetch_stock(sym: str) -> dict | None:
             "marketState": market_state,
         }
 
+        # ── 20-day moving average ──────────────────────────────────────
+        hist20 = t.history(period="1mo")
+        if not hist20.empty and len(hist20) >= 2:
+            avg20 = float(hist20["Close"].tail(20).mean())
+            result["avg20d"] = round(avg20, 2)
+
+        # ── Forward PE ─────────────────────────────────────────────────
+        fwd_pe = info.get("forwardPE")
+        if fwd_pe is None:
+            fwd_eps = info.get("forwardEps")
+            if fwd_eps and latest_price:
+                fwd_pe = latest_price / fwd_eps
+        if fwd_pe is not None:
+            result["forwardPE"] = round(float(fwd_pe), 2)
+
         # ── Post-market / after-hours ──────────────────────────────────
         if not post_data.empty:
             pm_price = float(post_data["Close"].iloc[-1])
@@ -136,6 +151,14 @@ def format_stock(sym: str, d: dict) -> str:
         line = f"{sym:>4s}: ${price:,.2f}  {sign}{change:+.2f} ({sign}{pct:.2f}%)  [{state}]"
     else:
         line = f"{sym:>4s}: ${price:,.2f}  [{state}]"
+
+    # 20-day avg
+    avg20 = d.get("avg20d")
+    line += f"  20d-avg: {'$' + f'{avg20:,.2f}' if avg20 else 'N/A'}"
+
+    # Forward PE
+    fwd_pe = d.get("forwardPE")
+    line += f"  FwdPE: {fwd_pe:.2f}" if fwd_pe else "  FwdPE: N/A"
 
     if d.get("postMarketPrice"):
         pm = d["postMarketPrice"]

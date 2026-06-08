@@ -90,7 +90,7 @@
 
         .ticker-table {
             width: 100%;
-            max-width: 480px;
+            max-width: 580px;
             margin: 0 auto 2rem;
             border-collapse: collapse;
         }
@@ -165,7 +165,8 @@
                     <th>Symbol</th>
                     <th>Price</th>
                     <th>Change</th>
-                    <th>After-Hrs</th>
+                    <th>20d Avg</th>
+                    <th>Fwd PE</th>
                 </tr>
             </thead>
             <tbody>
@@ -173,25 +174,29 @@
                     <td class="symbol">NVDA</td>
                     <td class="price" id="price-NVDA">—</td>
                     <td class="change" id="change-NVDA">—</td>
-                    <td class="change" id="ah-NVDA">—</td>
+                    <td class="price" id="avg20-NVDA">—</td>
+                    <td class="price" id="fwdpe-NVDA">—</td>
                 </tr>
                 <tr id="row-MU">
                     <td class="symbol">MU</td>
                     <td class="price" id="price-MU">—</td>
                     <td class="change" id="change-MU">—</td>
-                    <td class="change" id="ah-MU">—</td>
+                    <td class="price" id="avg20-MU">—</td>
+                    <td class="price" id="fwdpe-MU">—</td>
                 </tr>
                 <tr id="row-VOO">
                     <td class="symbol">VOO</td>
                     <td class="price" id="price-VOO">—</td>
                     <td class="change" id="change-VOO">—</td>
-                    <td class="change" id="ah-VOO">—</td>
+                    <td class="price" id="avg20-VOO">—</td>
+                    <td class="price" id="fwdpe-VOO">—</td>
                 </tr>
                 <tr id="row-QQQ">
                     <td class="symbol">QQQ</td>
                     <td class="price" id="price-QQQ">—</td>
                     <td class="change" id="change-QQQ">—</td>
-                    <td class="change" id="ah-QQQ">—</td>
+                    <td class="price" id="avg20-QQQ">—</td>
+                    <td class="price" id="fwdpe-QQQ">—</td>
                 </tr>
             </tbody>
         </table>
@@ -224,18 +229,20 @@
                 cel.textContent = sign + change.toFixed(2) + ' (' + (pct > 0 ? '+' : '') + pct.toFixed(2) + '%)';
                 cel.className = 'change ' + dir;
 
-                // After-hours price
-                const ah = document.getElementById('ah-' + sym);
-                if (info.postMarketPrice) {
-                    const ahChange = info.postMarketChange || (info.postMarketPrice - price);
-                    const ahPct = info.postMarketChangePercent || ((ahChange / price) * 100);
-                    const ahDir = ahChange > 0 ? 'up' : ahChange < 0 ? 'down' : 'neutral';
-                    const ahSign = ahChange > 0 ? '+' : '';
-                    ah.textContent = '$' + info.postMarketPrice.toFixed(2) + ' ' + ahSign + ahChange.toFixed(2) + ' (' + (ahPct > 0 ? '+' : '') + ahPct.toFixed(2) + '%)';
-                    ah.className = 'change ah ' + ahDir;
+                // 20-day average
+                const avg20 = document.getElementById('avg20-' + sym);
+                if (info.avg20d) {
+                    avg20.textContent = '$' + info.avg20d.toFixed(2);
                 } else {
-                    ah.textContent = '—';
-                    ah.className = 'change';
+                    avg20.textContent = '—';
+                }
+
+                // Forward PE
+                const fwdpe = document.getElementById('fwdpe-' + sym);
+                if (info.forwardPE) {
+                    fwdpe.textContent = info.forwardPE.toFixed(2);
+                } else {
+                    fwdpe.textContent = '—';
                 }
             }
 
