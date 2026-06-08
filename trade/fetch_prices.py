@@ -15,7 +15,7 @@ from pathlib import Path
 import yfinance as yf
 
 # ── Config ──────────────────────────────────────────────────────────────
-SYMBOLS = ["NVDA", "MU", "VOO", "QQQ"]
+SYMBOLS = ["NVDA", "MU", "VOO", "QQQ", "LITE", "GOOGL", "META", "MSFT", "VST", "ETN"]
 OUTPUT = Path(__file__).resolve().parent / "prices.json"
 
 

@@ -43,7 +43,7 @@
         .container {
             text-align: center;
             padding: 2rem;
-            max-width: 640px;
+            max-width: 680px;
         }
 
         .badge {
@@ -169,35 +169,8 @@
                     <th>Fwd PE</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr id="row-NVDA">
-                    <td class="symbol">NVDA</td>
-                    <td class="price" id="price-NVDA">—</td>
-                    <td class="change" id="change-NVDA">—</td>
-                    <td class="price" id="avg20-NVDA">—</td>
-                    <td class="price" id="fwdpe-NVDA">—</td>
-                </tr>
-                <tr id="row-MU">
-                    <td class="symbol">MU</td>
-                    <td class="price" id="price-MU">—</td>
-                    <td class="change" id="change-MU">—</td>
-                    <td class="price" id="avg20-MU">—</td>
-                    <td class="price" id="fwdpe-MU">—</td>
-                </tr>
-                <tr id="row-VOO">
-                    <td class="symbol">VOO</td>
-                    <td class="price" id="price-VOO">—</td>
-                    <td class="change" id="change-VOO">—</td>
-                    <td class="price" id="avg20-VOO">—</td>
-                    <td class="price" id="fwdpe-VOO">—</td>
-                </tr>
-                <tr id="row-QQQ">
-                    <td class="symbol">QQQ</td>
-                    <td class="price" id="price-QQQ">—</td>
-                    <td class="change" id="change-QQQ">—</td>
-                    <td class="price" id="avg20-QQQ">—</td>
-                    <td class="price" id="fwdpe-QQQ">—</td>
-                </tr>
+            <tbody id="ticker-body">
+                <tr><td colspan="5" class="loading-text">Loading prices…</td></tr>
             </tbody>
         </table>
         <p class="loading-text" id="updated">Loading prices…</p>
@@ -214,6 +187,8 @@
             const res = await fetch('prices.json');
             const data = await res.json();
             const stocks = data.stocks;
+            const tbody = document.getElementById('ticker-body');
+            tbody.innerHTML = '';
 
             for (const [sym, info] of Object.entries(stocks)) {
                 const price = info.price;
@@ -222,33 +197,22 @@
                 const pct = prev ? ((change / prev) * 100) : 0;
                 const dir = change > 0 ? 'up' : change < 0 ? 'down' : 'neutral';
                 const sign = change > 0 ? '+' : '';
+                const avg20 = info.avg20d ? '$' + info.avg20d.toFixed(2) : '—';
+                const fwdpe = info.forwardPE ? info.forwardPE.toFixed(2) : '—';
 
-                document.getElementById('price-' + sym).textContent =
-                    '$' + price.toFixed(2);
-                const cel = document.getElementById('change-' + sym);
-                cel.textContent = sign + change.toFixed(2) + ' (' + (pct > 0 ? '+' : '') + pct.toFixed(2) + '%)';
-                cel.className = 'change ' + dir;
-
-                // 20-day average
-                const avg20 = document.getElementById('avg20-' + sym);
-                if (info.avg20d) {
-                    avg20.textContent = '$' + info.avg20d.toFixed(2);
-                } else {
-                    avg20.textContent = '—';
-                }
-
-                // Forward PE
-                const fwdpe = document.getElementById('fwdpe-' + sym);
-                if (info.forwardPE) {
-                    fwdpe.textContent = info.forwardPE.toFixed(2);
-                } else {
-                    fwdpe.textContent = '—';
-                }
+                tbody.innerHTML +=
+                    '<tr>' +
+                        '<td class="symbol">' + sym + '</td>' +
+                        '<td class="price">$' + price.toFixed(2) + '</td>' +
+                        '<td class="change ' + dir + '">' + sign + change.toFixed(2) + ' (' + (pct > 0 ? '+' : '') + pct.toFixed(2) + '%)</td>' +
+                        '<td class="price">' + avg20 + '</td>' +
+                        '<td class="price">' + fwdpe + '</td>' +
+                    '</tr>';
             }
 
             const updated = new Date(data.updated);
             document.getElementById('updated').textContent =
-                'Updated ' + updated.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) + ' ET';
+                'Updated ' + updated.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' ET';
         } catch (e) {
             document.getElementById('updated').textContent =
                 'Prices unavailable — retrying soon.';
