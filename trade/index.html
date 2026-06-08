@@ -209,7 +209,7 @@
     </div>
 
     <script>
-    (async () => {
+    async function loadPrices() {
         try {
             const res = await fetch('prices.json');
             const data = await res.json();
@@ -253,7 +253,10 @@
             document.getElementById('updated').textContent =
                 'Prices unavailable — retrying soon.';
         }
-    })();
+    }
+
+    loadPrices();
+    setInterval(loadPrices, 10000);
     </script>
 </body>
 </html>
