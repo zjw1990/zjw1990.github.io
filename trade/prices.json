@@ -1,103 +1,73 @@
 {
-  "updated": "2026-06-09T22:08:08.418814+00:00",
+  "updated": "2026-06-10T16:35:15.683332+00:00",
   "stocks": {
     "NVDA": {
-      "price": 206.9,
-      "previousClose": 207.65,
-      "marketState": "POST",
-      "avg20d": 218.01,
-      "forwardPE": 16.42,
-      "postMarketPrice": 206.9,
-      "postMarketChange": -0.95,
-      "postMarketChangePercent": -0.46
+      "price": 203.54,
+      "previousClose": 206.43,
+      "marketState": "REGULAR",
+      "avg20d": 217.16,
+      "forwardPE": 16.05
     },
     "MU": {
-      "price": 922.51,
-      "previousClose": 955.0,
-      "marketState": "POST",
-      "avg20d": 866.97,
-      "forwardPE": 8.55,
-      "postMarketPrice": 922.51,
-      "postMarketChange": -7.49,
-      "postMarketChangePercent": -0.81
+      "price": 907.29,
+      "previousClose": 919.61,
+      "marketState": "REGULAR",
+      "avg20d": 874.0,
+      "forwardPE": 8.13
     },
     "VOO": {
-      "price": 676.55,
-      "previousClose": 679.19,
-      "marketState": "POST",
-      "avg20d": 686.07,
-      "postMarketPrice": 676.55,
-      "postMarketChange": -0.99,
-      "postMarketChangePercent": -0.15
+      "price": 672.64,
+      "previousClose": 676.4,
+      "marketState": "REGULAR",
+      "avg20d": 685.77
     },
     "QQQ": {
-      "price": 706.74,
-      "previousClose": 715.4,
-      "marketState": "POST",
-      "avg20d": 721.98,
-      "postMarketPrice": 706.74,
-      "postMarketChange": -1.1,
-      "postMarketChangePercent": -0.16
+      "price": 700.32,
+      "previousClose": 706.67,
+      "marketState": "REGULAR",
+      "avg20d": 721.63
     },
     "LITE": {
-      "price": 820.12,
-      "previousClose": 892.02,
-      "marketState": "POST",
-      "avg20d": 923.83,
-      "forwardPE": 45.4,
-      "postMarketPrice": 820.12,
-      "postMarketChange": -0.88,
-      "postMarketChangePercent": -0.11
+      "price": 857.0,
+      "previousClose": 819.61,
+      "marketState": "REGULAR",
+      "avg20d": 917.06,
+      "forwardPE": 47.35
     },
     "GOOGL": {
-      "price": 363.6,
-      "previousClose": 363.25,
-      "marketState": "POST",
-      "avg20d": 382.08,
-      "forwardPE": 25.18,
-      "postMarketPrice": 363.6,
-      "postMarketChange": -0.63,
-      "postMarketChangePercent": -0.17
+      "price": 358.72,
+      "previousClose": 363.61,
+      "marketState": "REGULAR",
+      "avg20d": 380.66,
+      "forwardPE": 24.8
     },
     "META": {
-      "price": 586.51,
-      "previousClose": 586.55,
-      "marketState": "POST",
-      "avg20d": 610.79,
-      "forwardPE": 16.17,
-      "postMarketPrice": 586.51,
-      "postMarketChange": 1.28,
-      "postMarketChangePercent": 0.22
+      "price": 577.66,
+      "previousClose": 587.5,
+      "marketState": "REGULAR",
+      "avg20d": 609.52,
+      "forwardPE": 15.97
     },
     "MSFT": {
-      "price": 403.19,
-      "previousClose": 410.98,
-      "marketState": "POST",
-      "avg20d": 421.63,
-      "forwardPE": 20.86,
-      "postMarketPrice": 403.19,
-      "postMarketChange": -0.8,
-      "postMarketChangePercent": -0.2
+      "price": 402.95,
+      "previousClose": 403.12,
+      "marketState": "REGULAR",
+      "avg20d": 421.44,
+      "forwardPE": 20.83
     },
     "VST": {
-      "price": 145.1,
-      "previousClose": 146.77,
-      "marketState": "POST",
-      "avg20d": 149.96,
-      "forwardPE": 13.34,
-      "postMarketPrice": 145.1,
-      "postMarketChange": -0.7,
-      "postMarketChangePercent": -0.48
+      "price": 139.59,
+      "previousClose": 145.2,
+      "marketState": "REGULAR",
+      "avg20d": 149.6,
+      "forwardPE": 12.74
     },
     "ETN": {
-      "price": 401.64,
-      "previousClose": 402.0,
-      "marketState": "POST",
-      "avg20d": 399.63,
-      "forwardPE": 25.55,
-      "postMarketPrice": 401.64,
-      "postMarketChange": -0.08,
-      "postMarketChangePercent": -0.02
+      "price": 376.78,
+      "previousClose": 400.22,
+      "marketState": "REGULAR",
+      "avg20d": 398.4,
+      "forwardPE": 23.97
     }
   }
 }
