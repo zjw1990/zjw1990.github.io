@@ -1,73 +1,73 @@
 {
-  "updated": "2026-06-11T16:54:18.862883+00:00",
+  "updated": "2026-06-11T19:35:38.160423+00:00",
   "stocks": {
     "NVDA": {
-      "price": 201.01,
+      "price": 205.1,
       "previousClose": 199.2,
       "marketState": "REGULAR",
-      "avg20d": 215.78,
-      "forwardPE": 15.79
+      "avg20d": 215.98,
+      "forwardPE": 16.12
     },
     "MU": {
-      "price": 920.8,
+      "price": 988.69,
       "previousClose": 877.0,
       "marketState": "REGULAR",
-      "avg20d": 879.09,
-      "forwardPE": 8.21
+      "avg20d": 882.5,
+      "forwardPE": 8.82
     },
     "VOO": {
-      "price": 668.79,
+      "price": 679.93,
       "previousClose": 664.61,
       "marketState": "REGULAR",
-      "avg20d": 684.81
+      "avg20d": 685.37
     },
     "QQQ": {
-      "price": 700.83,
+      "price": 717.98,
       "previousClose": 689.73,
       "marketState": "REGULAR",
-      "avg20d": 720.61
+      "avg20d": 721.47
     },
     "LITE": {
-      "price": 858.12,
+      "price": 888.79,
       "previousClose": 833.5,
       "marketState": "REGULAR",
-      "avg20d": 908.28,
-      "forwardPE": 47.43
+      "avg20d": 909.79,
+      "forwardPE": 49.1
     },
     "GOOGL": {
-      "price": 348.08,
+      "price": 357.77,
       "previousClose": 354.62,
       "marketState": "REGULAR",
-      "avg20d": 377.82,
-      "forwardPE": 24.06
+      "avg20d": 378.31,
+      "forwardPE": 24.71
     },
     "META": {
-      "price": 561.44,
+      "price": 571.68,
       "previousClose": 568.12,
       "marketState": "REGULAR",
-      "avg20d": 606.43,
-      "forwardPE": 15.53
+      "avg20d": 606.94,
+      "forwardPE": 15.81
     },
     "MSFT": {
-      "price": 386.64,
+      "price": 388.95,
       "previousClose": 396.5,
       "marketState": "REGULAR",
-      "avg20d": 420.27,
-      "forwardPE": 19.99
+      "avg20d": 420.39,
+      "forwardPE": 20.11
     },
     "VST": {
-      "price": 144.6,
+      "price": 146.66,
       "previousClose": 137.17,
       "marketState": "REGULAR",
-      "avg20d": 149.64,
-      "forwardPE": 13.2
+      "avg20d": 149.75,
+      "forwardPE": 13.38
     },
     "ETN": {
-      "price": 383.17,
+      "price": 395.79,
       "previousClose": 374.7,
       "marketState": "REGULAR",
-      "avg20d": 397.14,
-      "forwardPE": 24.37
+      "avg20d": 397.77,
+      "forwardPE": 25.17
     }
   }
 }
