@@ -1,103 +1,103 @@
 {
-  "updated": "2026-07-08T20:03:12.035092+00:00",
+  "updated": "2026-07-08T21:40:27.166391+00:00",
   "stocks": {
     "NVDA": {
-      "price": 204.04,
+      "price": 202.98,
       "previousClose": 195.89,
       "marketState": "POST",
       "avg20d": 201.69,
       "forwardPE": 15.99,
-      "postMarketPrice": 204.04,
-      "postMarketChange": 0.04,
-      "postMarketChangePercent": 0.02
+      "postMarketPrice": 202.98,
+      "postMarketChange": -1.02,
+      "postMarketChangePercent": -0.5
     },
     "MU": {
-      "price": 944.86,
+      "price": 945.0,
       "previousClose": 914.87,
       "marketState": "POST",
       "avg20d": 1046.26,
       "forwardPE": 6.34,
-      "postMarketPrice": 944.86,
-      "postMarketChange": -0.53,
-      "postMarketChangePercent": -0.06
+      "postMarketPrice": 945.0,
+      "postMarketChange": -0.39,
+      "postMarketChangePercent": -0.04
     },
     "VOO": {
-      "price": 684.68,
+      "price": 684.57,
       "previousClose": 685.83,
       "marketState": "POST",
       "avg20d": 680.97,
-      "postMarketPrice": 684.68,
-      "postMarketChange": -0.13,
-      "postMarketChangePercent": -0.02
+      "postMarketPrice": 684.57,
+      "postMarketChange": -0.25,
+      "postMarketChangePercent": -0.04
     },
     "QQQ": {
-      "price": 710.65,
+      "price": 710.56,
       "previousClose": 707.08,
       "marketState": "POST",
       "avg20d": 719.88,
-      "postMarketPrice": 710.65,
-      "postMarketChange": -0.27,
-      "postMarketChangePercent": -0.04
+      "postMarketPrice": 710.56,
+      "postMarketChange": -0.36,
+      "postMarketChangePercent": -0.05
     },
     "LITE": {
-      "price": 707.71,
+      "price": 705.8,
       "previousClose": 689.8,
       "marketState": "POST",
       "avg20d": 832.91,
       "forwardPE": 39.0,
-      "postMarketPrice": 707.71,
-      "postMarketChange": 1.86,
-      "postMarketChangePercent": 0.26
+      "postMarketPrice": 705.8,
+      "postMarketChange": -0.05,
+      "postMarketChangePercent": -0.01
     },
     "GOOGL": {
-      "price": 361.52,
+      "price": 361.07,
       "previousClose": 366.75,
       "marketState": "POST",
       "avg20d": 358.11,
       "forwardPE": 24.86,
-      "postMarketPrice": 361.52,
-      "postMarketChange": -0.4,
-      "postMarketChangePercent": -0.11
+      "postMarketPrice": 361.07,
+      "postMarketChange": -0.85,
+      "postMarketChangePercent": -0.23
     },
     "META": {
-      "price": 603.37,
+      "price": 603.2,
       "previousClose": 616.98,
       "marketState": "POST",
       "avg20d": 577.24,
-      "forwardPE": 16.38,
-      "postMarketPrice": 603.37,
-      "postMarketChange": 0.37,
-      "postMarketChangePercent": 0.06
+      "forwardPE": 16.37,
+      "postMarketPrice": 603.2,
+      "postMarketChange": 0.2,
+      "postMarketChangePercent": 0.03
     },
     "MSFT": {
-      "price": 382.96,
+      "price": 383.25,
       "previousClose": 388.05,
       "marketState": "POST",
       "avg20d": 382.08,
       "forwardPE": 19.8,
-      "postMarketPrice": 382.96,
-      "postMarketChange": -0.38,
-      "postMarketChangePercent": -0.1
+      "postMarketPrice": 383.25,
+      "postMarketChange": -0.09,
+      "postMarketChangePercent": -0.02
     },
     "VST": {
-      "price": 154.82,
+      "price": 154.0,
       "previousClose": 155.4,
       "marketState": "POST",
       "avg20d": 156.45,
-      "forwardPE": 14.32,
-      "postMarketPrice": 154.82,
-      "postMarketChange": 0.02,
-      "postMarketChangePercent": 0.01
+      "forwardPE": 14.33,
+      "postMarketPrice": 154.0,
+      "postMarketChange": -0.8,
+      "postMarketChangePercent": -0.52
     },
     "ETN": {
-      "price": 399.56,
+      "price": 401.0,
       "previousClose": 394.34,
       "marketState": "POST",
       "avg20d": 406.52,
-      "forwardPE": 25.32,
-      "postMarketPrice": 399.56,
-      "postMarketChange": 0.0,
-      "postMarketChangePercent": 0.0
+      "forwardPE": 25.33,
+      "postMarketPrice": 401.0,
+      "postMarketChange": 1.44,
+      "postMarketChangePercent": 0.36
     }
   }
 }
