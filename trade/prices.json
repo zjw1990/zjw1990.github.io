@@ -1,103 +1,73 @@
 {
-  "updated": "2026-07-23T22:31:06.997949+00:00",
+  "updated": "2026-07-24T14:53:09.663477+00:00",
   "stocks": {
     "NVDA": {
-      "price": 207.92,
-      "previousClose": 212.04,
-      "marketState": "POST",
-      "avg20d": 202.78,
-      "forwardPE": 16.22,
-      "postMarketPrice": 207.92,
-      "postMarketChange": -0.93,
-      "postMarketChangePercent": -0.45
+      "price": 207.69,
+      "previousClose": 207.99,
+      "marketState": "REGULAR",
+      "avg20d": 203.37,
+      "forwardPE": 16.14
     },
     "MU": {
-      "price": 986.75,
-      "previousClose": 983.29,
-      "marketState": "POST",
-      "avg20d": 990.38,
-      "forwardPE": 6.44,
-      "postMarketPrice": 986.75,
-      "postMarketChange": -3.26,
-      "postMarketChangePercent": -0.33
+      "price": 927.61,
+      "previousClose": 987.29,
+      "marketState": "REGULAR",
+      "avg20d": 976.1,
+      "forwardPE": 6.03
     },
     "VOO": {
-      "price": 679.14,
-      "previousClose": 686.28,
-      "marketState": "POST",
-      "avg20d": 685.6,
-      "postMarketPrice": 679.14,
-      "postMarketChange": -0.1,
-      "postMarketChangePercent": -0.01
+      "price": 678.94,
+      "previousClose": 679.07,
+      "marketState": "REGULAR",
+      "avg20d": 685.86
     },
     "QQQ": {
-      "price": 693.74,
-      "previousClose": 704.78,
-      "marketState": "POST",
-      "avg20d": 713.32,
-      "postMarketPrice": 693.74,
-      "postMarketChange": 0.29,
-      "postMarketChangePercent": 0.04
+      "price": 685.23,
+      "previousClose": 693.54,
+      "marketState": "REGULAR",
+      "avg20d": 711.76
     },
     "LITE": {
-      "price": 831.08,
-      "previousClose": 847.45,
-      "marketState": "POST",
-      "avg20d": 784.17,
-      "forwardPE": 45.41,
-      "postMarketPrice": 831.08,
-      "postMarketChange": -4.38,
-      "postMarketChangePercent": -0.52
+      "price": 774.92,
+      "previousClose": 832.49,
+      "marketState": "REGULAR",
+      "avg20d": 779.82,
+      "forwardPE": 42.21
     },
     "GOOGL": {
-      "price": 319.15,
-      "previousClose": 330.75,
-      "marketState": "POST",
-      "avg20d": 353.39,
-      "forwardPE": 21.53,
-      "postMarketPrice": 319.15,
-      "postMarketChange": 1.42,
-      "postMarketChangePercent": 0.45
+      "price": 318.89,
+      "previousClose": 319.24,
+      "marketState": "REGULAR",
+      "avg20d": 352.15,
+      "forwardPE": 21.58
     },
     "META": {
-      "price": 607.0,
-      "previousClose": 619.65,
-      "marketState": "POST",
-      "avg20d": 618.35,
-      "forwardPE": 16.38,
-      "postMarketPrice": 607.0,
-      "postMarketChange": 1.2,
-      "postMarketChangePercent": 0.2
+      "price": 604.61,
+      "previousClose": 606.86,
+      "marketState": "REGULAR",
+      "avg20d": 621.44,
+      "forwardPE": 16.34
     },
     "MSFT": {
-      "price": 382.81,
-      "previousClose": 388.3,
-      "marketState": "POST",
-      "avg20d": 385.45,
-      "forwardPE": 19.69,
-      "postMarketPrice": 382.81,
-      "postMarketChange": 1.12,
-      "postMarketChangePercent": 0.29
+      "price": 383.41,
+      "previousClose": 382.43,
+      "marketState": "REGULAR",
+      "avg20d": 386.98,
+      "forwardPE": 19.79
     },
     "VST": {
-      "price": 168.25,
-      "previousClose": 166.07,
-      "marketState": "POST",
-      "avg20d": 159.1,
-      "forwardPE": 15.64,
-      "postMarketPrice": 168.25,
-      "postMarketChange": -1.05,
-      "postMarketChangePercent": -0.62
+      "price": 168.07,
+      "previousClose": 168.33,
+      "marketState": "REGULAR",
+      "avg20d": 159.11,
+      "forwardPE": 15.55
     },
     "ETN": {
-      "price": 415.13,
-      "previousClose": 406.9,
-      "marketState": "POST",
-      "avg20d": 407.17,
-      "forwardPE": 26.31,
-      "postMarketPrice": 415.13,
-      "postMarketChange": 0.0,
-      "postMarketChangePercent": 0.0
+      "price": 409.11,
+      "previousClose": 415.85,
+      "marketState": "REGULAR",
+      "avg20d": 406.63,
+      "forwardPE": 25.93
     }
   }
 }
