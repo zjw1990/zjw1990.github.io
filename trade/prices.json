@@ -1,103 +1,73 @@
 {
-  "updated": "2026-11-13T01:39:55.584943+00:00",
+  "updated": "2026-11-13T20:19:10.687678+00:00",
   "stocks": {
     "NVDA": {
-      "price": 167.84,
-      "previousClose": 160.37,
-      "marketState": "POSTPOST",
-      "avg20d": 203.1,
-      "forwardPE": 10.49,
-      "postMarketPrice": 167.84,
-      "postMarketChange": 1.55,
-      "postMarketChangePercent": 0.93
+      "price": 162.68,
+      "previousClose": 168.03,
+      "marketState": "REGULAR",
+      "avg20d": 198.68,
+      "forwardPE": 10.28
     },
     "MU": {
-      "price": 815.86,
-      "previousClose": 791.38,
-      "marketState": "POSTPOST",
-      "avg20d": 845.37,
-      "forwardPE": 3.84,
-      "postMarketPrice": 815.86,
-      "postMarketChange": 16.86,
-      "postMarketChangePercent": 2.11
+      "price": 770.84,
+      "previousClose": 814.3,
+      "marketState": "REGULAR",
+      "avg20d": 837.64,
+      "forwardPE": 3.71
     },
     "VOO": {
-      "price": 697.67,
-      "previousClose": 694.82,
-      "marketState": "POSTPOST",
-      "avg20d": 698.26,
-      "postMarketPrice": 697.67,
-      "postMarketChange": 1.45,
-      "postMarketChangePercent": 0.21
+      "price": 692.65,
+      "previousClose": 698.3,
+      "marketState": "REGULAR",
+      "avg20d": 697.7
     },
     "QQQ": {
-      "price": 690.93,
-      "previousClose": 683.53,
-      "marketState": "POSTPOST",
-      "avg20d": 697.41,
-      "postMarketPrice": 690.93,
-      "postMarketChange": 2.62,
-      "postMarketChangePercent": 0.38
+      "price": 679.66,
+      "previousClose": 692.11,
+      "marketState": "REGULAR",
+      "avg20d": 695.44
     },
     "LITE": {
-      "price": 641.5,
-      "previousClose": 630.48,
-      "marketState": "POSTPOST",
-      "avg20d": 740.44,
-      "forwardPE": 15.56,
-      "postMarketPrice": 641.5,
-      "postMarketChange": 15.51,
-      "postMarketChangePercent": 2.48
+      "price": 592.67,
+      "previousClose": 640.0,
+      "marketState": "REGULAR",
+      "avg20d": 723.09,
+      "forwardPE": 14.77
     },
     "GOOGL": {
-      "price": 300.84,
-      "previousClose": 293.5,
-      "marketState": "POSTPOST",
-      "avg20d": 306.02,
-      "forwardPE": 19.35,
-      "postMarketPrice": 300.84,
-      "postMarketChange": 1.76,
-      "postMarketChangePercent": 0.59
+      "price": 295.35,
+      "previousClose": 300.96,
+      "marketState": "REGULAR",
+      "avg20d": 303.4,
+      "forwardPE": 19.13
     },
     "META": {
-      "price": 626.2,
-      "previousClose": 623.65,
-      "marketState": "POSTPOST",
-      "avg20d": 641.33,
-      "forwardPE": 17.52,
-      "postMarketPrice": 626.2,
-      "postMarketChange": 1.24,
-      "postMarketChangePercent": 0.2
+      "price": 641.16,
+      "previousClose": 626.22,
+      "marketState": "REGULAR",
+      "avg20d": 637.04,
+      "forwardPE": 18.02
     },
     "MSFT": {
-      "price": 521.09,
-      "previousClose": 519.94,
-      "marketState": "POSTPOST",
-      "avg20d": 529.99,
-      "forwardPE": 21.62,
-      "postMarketPrice": 521.09,
-      "postMarketChange": -1.91,
-      "postMarketChangePercent": -0.37
+      "price": 524.78,
+      "previousClose": 521.99,
+      "marketState": "REGULAR",
+      "avg20d": 529.43,
+      "forwardPE": 21.69
     },
     "VST": {
-      "price": 136.0,
-      "previousClose": 130.9,
-      "marketState": "POSTPOST",
-      "avg20d": 138.44,
-      "forwardPE": 14.04,
-      "postMarketPrice": 136.0,
-      "postMarketChange": 1.49,
-      "postMarketChangePercent": 1.11
+      "price": 131.56,
+      "previousClose": 135.53,
+      "marketState": "REGULAR",
+      "avg20d": 137.22,
+      "forwardPE": 13.73
     },
     "ETN": {
-      "price": 363.0,
-      "previousClose": 362.78,
-      "marketState": "POSTPOST",
-      "avg20d": 370.57,
-      "forwardPE": 21.82,
-      "postMarketPrice": 363.0,
-      "postMarketChange": 3.96,
-      "postMarketChangePercent": 1.1
+      "price": 351.86,
+      "previousClose": 362.45,
+      "marketState": "REGULAR",
+      "avg20d": 368.08,
+      "forwardPE": 21.41
     }
   }
 }
